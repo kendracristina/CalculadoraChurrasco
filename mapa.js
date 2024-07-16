@@ -1,5 +1,5 @@
 function handleSubmit() {
-    //PEGA INPUT
+    //INPUT
     const qtdHomens = document.querySelector(".homens").value;
     const qtdMulheres = document.querySelector(".mulheres").value;
     const qtdCriancas = document.querySelector(".criancas").value;
