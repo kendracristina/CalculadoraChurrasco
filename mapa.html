@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Calculadora</title>
+    <style>
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1 id="Mapa"></h1>
+        <div id="calculadora">
+            <h2 class="calculadoraTitle">Calculadora de churrasco</h2>
+            <form onsubmit="return handleSubmit()" method="post" class="calculadoraForm">
+                <div class="calculadoraDivInput">
+                    <label for="homens">Homens:</label>
+                    <input type="number" class="homens" id="homens">
+                </div>
+                <div class="calculadoraDivInput">
+                    <label for="mulheres">Mulheres:</label>
+                    <input type="number" class="mulheres" id="mulheres">
+                </div>
+                <div class="calculadoraDivInput">
+                    <label for="criancas">Crianças:</label>
+                    <input type="number" class="criancas" id="criancas">
+                </div>
+                <input type="submit" value="Calcular">
+            </form>
+            <div id="divResultado">
+                <p>Quantidade de itens a ser comprado</p>
+                <ul id="ingredienteUl">
+                </ul>
+            </div>
+        </div>
+        <script src="calculadora.js"></script>
+    </section>
+</body>
+</html>
