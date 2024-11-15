@@ -28,19 +28,19 @@ function handleSubmit() {
     const cervejaCriancas = 0;
 
     //CALCULO INGREDIENTES
-    const totalCarne = (qtdHomens * carneBovinaHomens) + (qtdMulheres * carneBovinaMulheres) + (qtdCriancas * carneBovinaCriancas);
-    const totalFrango = (qtdHomens * frangoHomens) + (qtdMulheres * frangoMulheres) + (qtdCriancas * frangoCriancas);
-    const totalLinguica = (qtdHomens * linguicaHomens) + (qtdMulheres * linguicaMulheres) + (qtdCriancas * linguicaCriancas);
-    const totalRefrigerante = (qtdHomens * refrigeranteHomens) + (qtdMulheres * refrigeranteMulheres) + (qtdCriancas * refrigeranteCriancas);
-    const totalCerveja = (qtdHomens * cervejaHomens) + (qtdMulheres * cervejaMulheres) + (qtdCriancas * cervejaCriancas);
+    const totalCarne = Math.round(((qtdHomens * carneBovinaHomens + qtdMulheres * carneBovinaMulheres + qtdCriancas * carneBovinaCriancas) / 1000) * 100) / 100;
+    const totalFrango = Math.round(((qtdHomens * frangoHomens + qtdMulheres * frangoMulheres + qtdCriancas * frangoCriancas) / 1000) * 100) / 100;
+    const totalLinguica = Math.round(((qtdHomens * linguicaHomens + qtdMulheres * linguicaMulheres + qtdCriancas * linguicaCriancas) / 1000) * 100) / 100;
+    const totalRefrigerante = Math.round(((qtdHomens * refrigeranteHomens + qtdMulheres * refrigeranteMulheres + qtdCriancas * refrigeranteCriancas) / 1000) * 100) / 100;
+    const totalCerveja = Math.round(((qtdHomens * cervejaHomens + qtdMulheres * cervejaMulheres + qtdCriancas * cervejaCriancas) / 1000) * 100) / 100;
 
     const IngredientesLista = document.getElementById("ingredienteUl");
     IngredientesLista.innerHTML = `
-        <li class="IngredientesLista">${totalCarne}g de carne bovina</li>
-        <li class="IngredientesLista">${totalFrango}g de carne de frango</li>
-        <li class="IngredientesLista">${totalLinguica}g de linguiça</li>
-        <li class="IngredientesLista">${totalRefrigerante}ml de refrigerante</li>
-        <li class="IngredientesLista">${totalCerveja}ml de cerveja</li>
+        <li class="IngredientesLista">${totalCarne.toFixed(2)} kg de carne bovina</li>
+        <li class="IngredientesLista">${totalFrango.toFixed(2)} kg de carne de frango</li>
+        <li class="IngredientesLista">${totalLinguica.toFixed(2)} kg de linguiça</li>
+        <li class="IngredientesLista">${totalRefrigerante.toFixed(2)} L de refrigerante</li>
+        <li class="IngredientesLista">${totalCerveja.toFixed(2)} L de cerveja</li>
     `;
     return false;
 }
